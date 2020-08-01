@@ -7,6 +7,7 @@ $(".quiz").click(function(){
     if($(this).val() == "cats") questions = questionsC
     else if($(this).val() == "dogs") questions = questionsD
     else if($(this).val() == "marine") questions = questionsM
+    else if($(this).val() == "alpine") questions = questionsE
     animalQuizActivate();
 });
 
@@ -118,8 +119,53 @@ const questionsD = [
         'question': "The short-eared dog depends on the burrows dug up by_____?",
         'choices': ['gopher', 'pangolins', 'armadillo','woodchuck'],
         'correctanswer': 'armadillo'
+    },
+]    
+
+
+
+
+
+//Alpine Animals section
+//suchi
+const questionsE = [
+    {   'name': 'question1',
+        'sticker': "images/alpine/marmot.jpg",
+        'question': "Which animal is found throughout the alps and has adapted to the harsh winters by hibernating in burrows?",
+        'choices': ['Aardvark', 'Marmot', 'Prairie Dog','Burrowing owl'],
+        'correctanswer': 'Marmot'
+    },
+    {
+        'name': 'question2',
+        'sticker': "images/alpine/salamander.jpg",
+        'question': "Which is the only amphibian in Europe that gives birth to fully developed young?",
+        'choices': ['Alpine Gecko', 'Crocodile', 'Alpine Salamander','Asian water monitor'],
+        'correctanswer': 'Alpine Salamander'
+    },
+    {
+        'name': 'question3',
+        'sticker': "images/alpine/ibex.jpg",
+        'question': "Which animal has evolved to traverse near vertical cliffs in order to avoid deep snow and find food during the winter?",
+        'choices': ['Scimitar-Horned Oryx', 'Blackbuck', 'Alpine Ibex','Mountain goat'],
+        'correctanswer': 'Alpine Ibex'
+    },
+    {
+        'name': 'question4',
+        'sticker': "images/alpine/pika.jpg",
+        'question': "Despite their cuddly appearance, these animals which are the smallest members of the lagomorph group—are among North America's toughest animals",
+        'choices': ['pika', 'pangolins', 'chipmunks','woodchuck'],
+        'correctanswer': 'pika'
+    },
+    {
+        'name': 'question5',
+        'sticker': "images/alpine/lynx.jpg",
+        'question': "One of Europe's largest predators, has bounced back from the brink of extinction in Europe but it is still critically endangered in some areas.",
+        'choices': ['Ocelot', 'Jaguarundi', 'Eurasian Lynx','Serval'],
+        'correctanswer': 'Eurasian Lynx'
     }
 ]
+
+
 
 
 
