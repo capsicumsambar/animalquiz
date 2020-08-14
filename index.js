@@ -8,6 +8,7 @@ $(".quiz").click(function(){
     else if($(this).val() == "dogs") questions = questionsD
     else if($(this).val() == "marine") questions = questionsM
     else if($(this).val() == "alpine") questions = questionsE
+    else if($(this).val() == "australian") questions = questionsAU
     animalQuizActivate();
 });
 
@@ -200,6 +201,101 @@ const questionsM = [
     }
 ]
 
+const questionsAU = [
+    {   'name': 'question1',
+        'sticker': 'images/australian/tasmaniandevil.jpg',
+        'question': "Name this endangered Australian native animal.",
+        'choices': ['Fox Den', 'Tasmanian Devil', 'Tasmanian Tiger','Greater Bilby'],
+        'correctanswer': 'Tasmanian Devil'
+    },
+    {
+        'name': 'question2',
+        'sticker': "images/australian/cuttlefish.jpg",
+        'question': "The ______ is the largest Cephalopod, and can weigh as much as 10kg! It can be found along the southern coast from Shark Bay in WA to Brisbane in Queensland.",
+        'choices': ['Goulds Squid', 'Blue-ringed Octopus', 'Great Australian Cuttlefish','Southern Calamari Squid'],
+        'correctanswer': 'Great Australian Cuttlefish'
+    },
+    {
+        'name': 'question3',
+        'sticker': "",
+        'question': "There were 2 species of bilby, one is sadly extinct but the other can still be found in Australia although it is endangered. What are the two species?",
+        'choices': ['Lesser & Greater', 'Smaller & Bigger', 'Higher & Lower','Shorter & Longer'],
+        'correctanswer': 'Lesser & Greater'
+    },
+    {
+        'name': 'question4',
+        'sticker': "",
+        'question': "________ are similar to manatees in appearance and the only marine mammal which is a herbivore. They are threatened with extinction and are also known as sea cows or the “Lady of The Sea” and are thought to be the inspiration behind tales of mermaids.",
+        'choices': ['Manatee', 'Sea Lion', 'Dugong','Fur Seal'],
+        'correctanswer': 'Dugong'
+    },
+    {
+        'name': 'question5',
+        'sticker': "images/australian/flyingfox.jpg",
+        'question': "This is endemic to Australia, they are also known as fruit bats and many do not use echo-location",
+        'choices': ['Flying Fox', 'Ghost Bat', 'Emballonuridae','Goulds Wattled Bat'],
+        'correctanswer': 'Flying Fox'
+    },
+    {
+        'name': 'question6',
+        'sticker': "images/australian/galah.jpg",
+        'question': "An Australian cockatoo with a reputation for not being too bright.",
+        'choices': ['Black', 'Little Corella', 'Palm','Galah'],
+        'correctanswer': 'Galah'
+    },
+    {
+        'name': 'question7',
+        'sticker': "images/australian/numbat.jpg",
+        'question': "The ________ resembles an anteater and is in fact known as the banded anteater.",
+        'choices': ['Echidna', 'Numbat', 'Aardvark','Spiny Anteater'],
+        'correctanswer': 'Numbat'
+    },
+    {
+        'name': 'question8',
+        'sticker': "images/australian/quokka.jpg",
+        'question': "The cutest of all native Australian animals and the happiest creature on the planet!",
+        'choices': ['Red-necked Wallaby', 'Tammar', 'Quokka','Whiptail'],
+        'correctanswer': 'Quokka'
+    },
+    {
+        'name': 'question9',
+        'sticker': "images/australian/wallaroo.jpg",
+        'question': "One of the marsupials in Australia.",
+        'choices': ['Wallaroo', 'Wallaby', 'Kangaroo','Wombat'],
+        'correctanswer': 'Wallaroo'
+    },
+    {
+        'name': 'question10',
+        'sticker': "images/australian/wombat.jpg",
+        'question': "One of the marsupials in Australia.",
+        'choices': ['Wallaroo', 'Wallaby', 'Kangaroo','Wombat'],
+        'correctanswer': 'Wombat'
+    },
+    {
+        'name': 'question11',
+        'sticker': "images/australian/platypus.jpg",
+        'question': "Name this monotreme.",
+        'choices': ['Obdurodon', 'Kollikodon', 'Platypus','Echidna'],
+        'correctanswer': 'Platypus'
+    },
+    {
+        'name': 'question12',
+        'sticker': "images/australian/australianboxjellyfish.jpg",
+        'question': "This is the most venomous marine animal.",
+        'choices': ['Atolla jellyfish', 'Australian box jellyfish', 'Lions mane jellyfish','Cannonball jellyfish'],
+        'correctanswer': 'Australian box jellyfish'
+    },
+    {
+        'name': 'question13',
+        'sticker': "images/australian/coastaltaipan.jpg",
+        'question': "Some of the world’s most poisonous snakes such as this one can be found in Australia.",
+        'choices': ['Coastal Taipan', 'Inland Taipan', 'Tiger Snake','Brown Snake'],
+        'correctanswer': 'Coastal Taipan'
+    },
+
+]
+
+
 
 //Quiz function
 function animalQuizActivate(){
@@ -211,7 +307,9 @@ function animalQuizActivate(){
         $('.answercomment').remove();
         $('#nextquestion').remove();
         if(question < questions.length){ //Below quiz body executed if not the end of the quiz
-            $('#sticker').append(`<img height=240 width=240 src=${questions[question].sticker}>`);
+            if(questions[question].sticker){
+                $('#sticker').append(`<img height=240 width=240 src=${questions[question].sticker}>`);
+            }//show image only if provided in the data object above
             $('#question').append(`<br><h5>${questions[question].question}</h5>`);  
             //Enclosing value attribute with quotes to ensure multi-strings with spaces are all captured, if no quotes then only the first string of a multi-string value is captured      
             $('#choices').append(`
